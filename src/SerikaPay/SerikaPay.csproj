@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>SerikaPay</RootNamespace>
+    <PackageId>SerikaPay</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>serika.dev</Authors>
+    <Description>Official SerikaPay library for .NET</Description>
+    <PackageTags>serikapay;serika;payments;api;sdk</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://wallet.serika.dev/developers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/serika-dev/serikapay-dotnet</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>
