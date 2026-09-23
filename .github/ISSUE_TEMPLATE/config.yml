@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: API documentation
+    url: https://wallet.serika.dev/developers/docs
+    about: Endpoints, parameters, errors and webhooks.
+  - name: Report a security problem
+    url: ./security/advisories/new
+    about: Please report vulnerabilities privately.

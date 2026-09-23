@@ -1,0 +1,27 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: nuget
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: dotnet test
+      - run: dotnet pack src/SerikaPay -c Release -o out -p:Version=${GITHUB_REF_NAME#v}
+      - run: dotnet nuget push "out/*.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      - run: gh release create "$GITHUB_REF_NAME" out/*.nupkg --generate-notes --verify-tag
+        env:
+          GH_TOKEN: ${{ github.token }}

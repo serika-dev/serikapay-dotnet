@@ -1,5 +1,7 @@
 # SerikaPay .NET library
 
+[![CI](https://github.com/serika-dev/serikapay-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/serika-dev/serikapay-dotnet/actions/workflows/ci.yml)
+
 The official [SerikaPay](https://wallet.serika.dev/developers) library for .NET 8+. No dependencies beyond the BCL.
 
 ## Install
